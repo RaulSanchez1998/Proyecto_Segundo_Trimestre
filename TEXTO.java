@@ -26,7 +26,7 @@ public class TEXTO {
 			System.out.println("Bienvenido a Eventually");
 			System.out.println("Inserte '1' para acceder como desarrollador ");
 			System.out.println("Inserte '2' para acceder al menu de cliente (No incluido en esta version).");
-			System.out.println("inserte 3 para salir del programa");
+			System.out.println("Inserte 3 para salir del programa");
 			N = sc.nextInt();
 			sc.nextLine();
 
