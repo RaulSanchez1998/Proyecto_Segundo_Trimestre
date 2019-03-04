@@ -1,3 +1,5 @@
+package Proyecto_Segundo_Trimestre;
+
 
 public class Obje_event_deporte  extends evento_General{
 
@@ -9,23 +11,27 @@ public class Obje_event_deporte  extends evento_General{
 	}
 
 	
+
+
+
 	/**
+	 * @param nomEvento
+	 * @param localizacion
 	 * @param duracion
 	 * @param fecha
-	 * @param localizacion
 	 * @param entradas
-	 * @param eLaboral
 	 * @param precioEntrada
-	 * @param nomEvento
 	 * @param deporte
 	 * @param premio
 	 */
-	protected Obje_event_deporte(String duracion, String fecha, String localizacion, String entradas, String eLaboral,
-			String precioEntrada, String nomEvento, String deporte, String premio) {
-		super(duracion, fecha, localizacion, entradas, eLaboral, precioEntrada, nomEvento);
+	protected Obje_event_deporte(String nomEvento, String localizacion, String duracion, String fecha, String entradas,
+			String precioEntrada, String deporte, String premio) {
+		super(nomEvento, localizacion, duracion, fecha, entradas, precioEntrada);
 		Deporte = deporte;
 		Premio = premio;
 	}
+
+
 
 
 
@@ -44,6 +50,17 @@ public class Obje_event_deporte  extends evento_General{
 	protected void setPremio(String premio) {
 		Premio = premio;
 	}
+
+
+	/* (non-Javadoc)
+	 * @see Proyecto_Segundo_Trimestre.evento_General#toString()
+	 */
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString() + "\n Deporte: " + Deporte + "\n Premio a ganar: " + Premio;
+	}
+	
 	
 	
 }

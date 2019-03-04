@@ -1,3 +1,5 @@
+package Proyecto_Segundo_Trimestre;
+
 
 public class Obje_event_moda  extends evento_General{
 
@@ -7,23 +9,26 @@ public class Obje_event_moda  extends evento_General{
 		super();
 	}
 
+	
+	
 	/**
+	 * @param nomEvento
+	 * @param localizacion
 	 * @param duracion
 	 * @param fecha
-	 * @param localizacion
 	 * @param entradas
-	 * @param eLaboral
 	 * @param precioEntrada
-	 * @param nomEvento
 	 * @param diseñador
 	 * @param numModelos
 	 */
-	protected Obje_event_moda(String duracion, String fecha, String localizacion, String entradas, String eLaboral,
-			String precioEntrada, String nomEvento, String diseñador, String numModelos) {
-		super(duracion, fecha, localizacion, entradas, eLaboral, precioEntrada, nomEvento);
+	protected Obje_event_moda(String nomEvento, String localizacion, String duracion, String fecha, String entradas,
+			String precioEntrada, String diseñador, String numModelos) {
+		super(nomEvento, localizacion, duracion, fecha, entradas, precioEntrada);
 		Diseñador = diseñador;
 		this.numModelos = numModelos;
 	}
+
+
 
 	public String getDiseñador() {
 		return Diseñador;
@@ -39,6 +44,15 @@ public class Obje_event_moda  extends evento_General{
 
 	public void setNumModelos(String numModelos) {
 		this.numModelos = numModelos;
+	}
+
+	/* (non-Javadoc)
+	 * @see Proyecto_Segundo_Trimestre.evento_General#toString()
+	 */
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString() + "\n Diseñador: " + Diseñador + "\n Modelos: " + numModelos;
 	}
 	
 	
