@@ -1,8 +1,10 @@
+package Proyecto_Segundo_Trimestre;
+
 
 public class Obje_event_empresa  extends evento_General{
 
 	
-	String Tema,Invitados;
+	String Tema,numInvitados;
 
 	protected Obje_event_empresa() {
 		super();
@@ -10,23 +12,26 @@ public class Obje_event_empresa  extends evento_General{
 
 	
 	
+
+
 	/**
+	 * @param nomEvento
+	 * @param localizacion
 	 * @param duracion
 	 * @param fecha
-	 * @param localizacion
 	 * @param entradas
-	 * @param eLaboral
 	 * @param precioEntrada
-	 * @param nomEvento
 	 * @param tema
 	 * @param invitados
 	 */
-	protected Obje_event_empresa(String duracion, String fecha, String localizacion, String entradas, String eLaboral,
-			String precioEntrada, String nomEvento, String tema, String invitados) {
-		super(duracion, fecha, localizacion, entradas, eLaboral, precioEntrada, nomEvento);
+	protected Obje_event_empresa(String nomEvento, String localizacion, String duracion, String fecha, String entradas,
+			String precioEntrada, String tema, String numinvitados) {
+		super(nomEvento, localizacion, duracion, fecha, entradas, precioEntrada);
 		Tema = tema;
-		Invitados = invitados;
+		numInvitados = numinvitados;
 	}
+
+
 
 
 
@@ -39,11 +44,22 @@ public class Obje_event_empresa  extends evento_General{
 	}
 
 	protected String getInvitados() {
-		return Invitados;
+		return numInvitados;
 	}
 
 	protected void setInvitados(String invitados) {
-		Invitados = invitados;
+		numInvitados = invitados;
+	}
+
+
+
+	/* (non-Javadoc)
+	 * @see Proyecto_Segundo_Trimestre.evento_General#toString()
+	 */
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString() + "\n Tema a hablar: " + Tema + "\n Numero de invitados: " + numInvitados ;
 	}
 	
 	

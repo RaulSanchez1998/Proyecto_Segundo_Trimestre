@@ -1,3 +1,5 @@
+package Proyecto_Segundo_Trimestre;
+
 
 
 public class Obje_event_musical  extends evento_General {
@@ -13,21 +15,32 @@ public class Obje_event_musical  extends evento_General {
 	 * @param fecha
 	 * @param localizacion
 	 * @param entradas
-	 * @param eLaboral
 	 * @param precioEntrada
 	 * @param nomEvento
 	 * @param nombreArtistaM
 	 * @param nomAlbum
 	 */
-	protected Obje_event_musical(String duracion, String fecha, String localizacion, String entradas, String eLaboral,
-			String precioEntrada, String nomEvento, String nombreArtistaM, String nomAlbum) {
-		super(duracion, fecha, localizacion, entradas, eLaboral, precioEntrada, nomEvento);
-		this.nombreArtistaM = nombreArtistaM;
-		this.nomAlbum = nomAlbum;
-	}
+	
 
 	protected String getNombreArtistaM() {
 		return nombreArtistaM;
+	}
+
+	/**
+	 * @param nomEvento
+	 * @param localizacion
+	 * @param duracion
+	 * @param fecha
+	 * @param entradas
+	 * @param precioEntrada
+	 * @param nombreArtistaM
+	 * @param nomAlbum
+	 */
+	protected Obje_event_musical(String nomEvento, String localizacion, String duracion, String fecha, String entradas,
+			String precioEntrada, String nombreArtistaM, String nomAlbum) {
+		super(nomEvento, localizacion, duracion, fecha, entradas, precioEntrada);
+		this.nombreArtistaM = nombreArtistaM;
+		this.nomAlbum = nomAlbum;
 	}
 
 	protected void setNombreArtista(String nombreArtistaM) {
@@ -41,5 +54,15 @@ public class Obje_event_musical  extends evento_General {
 	protected void setNomAlbum(String nomAlbum) {
 		this.nomAlbum = nomAlbum;
 	}
+
+	/* (non-Javadoc)
+	 * @see Proyecto_Segundo_Trimestre.evento_General#toString()
+	 */
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString() + "\n Nombre artista" + nombreArtistaM + "\n Album: " + nomAlbum;
+	}
+
 	
 }
