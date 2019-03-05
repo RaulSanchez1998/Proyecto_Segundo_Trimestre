@@ -91,6 +91,25 @@ public class GESTION {
 		}
 	}
 
+	public boolean comprobarArte(String nombre, boolean ayuda) {
+
+		Iterator<evento_General> itlista = listaEventos.iterator();
+		boolean control = true;
+		evento_General itl = itlista.next();
+
+		do {
+
+			if (itl.getNomEvento().equalsIgnoreCase(nombre)) {
+				if (itl instanceof Obje_event_arte) {
+					ayuda = false;
+					control = false;
+				}
+			}
+		} while (control);
+
+		return ayuda;
+	}
+
 	public void imprimirCine() {
 
 		Iterator<evento_General> itlista = listaEventos.iterator();
@@ -219,7 +238,7 @@ public class GESTION {
 		return precioEntradas;
 	}
 
-	public boolean buscarEvento(String nombre, boolean comprobar) {
+	public boolean buscarEvento(String nombre, boolean comprobar) {// Compreba su existe el evento
 
 		Iterator<evento_General> itlista = listaEventos.iterator();
 		boolean control = true;
@@ -237,7 +256,7 @@ public class GESTION {
 		return comprobar;
 	}
 
-	public void actualizar(String nombre, String numeroEntradas) {
+	public void actualizar(String nombre, String numeroEntradas) {// Actualizo el numero de entradas despues de comprar
 
 		String NumeroEntradas = numeroEntradas;
 		Iterator<evento_General> itlista = listaEventos.iterator();
@@ -252,7 +271,306 @@ public class GESTION {
 			}
 
 		}
+
 	}
-	// Editar cada elemento de los objetos
+	// Editar cada elemento de los objetos auxilio me desmayo
+
+	public String actualizarNombre(String nombre, String nuevo) {
+
+		String prueba = "";
+		Iterator<evento_General> itlista = listaEventos.iterator();
+		boolean control = true;
+		while (itlista.hasNext() && control) {
+
+			evento_General itl = itlista.next();
+
+			if (itl.getNomEvento().equalsIgnoreCase(nombre)) {
+				itl.setNomEvento(nuevo);
+				control = false;
+				prueba = nuevo;
+			}
+
+		}
+		return prueba;
+	}
+
+	public void actualizarLocalizacion(String nombre, String nuevo) {
+
+		Iterator<evento_General> itlista = listaEventos.iterator();
+		boolean control = true;
+		while (itlista.hasNext() && control) {
+
+			evento_General itl = itlista.next();
+
+			if (itl.getNomEvento().equalsIgnoreCase(nombre)) {
+				itl.setLocalizacion(nuevo);
+				control = false;
+			}
+		}
+	}
+
+	public void actualizarDuracion(String nombre, String nuevo) {
+
+		Iterator<evento_General> itlista = listaEventos.iterator();
+		boolean control = true;
+		while (itlista.hasNext() && control) {
+
+			evento_General itl = itlista.next();
+
+			if (itl.getNomEvento().equalsIgnoreCase(nombre)) {
+				itl.setDuracion(nuevo);
+				control = false;
+			}
+		}
+	}
+
+	public void actualizarFecha(String nombre, String nuevo) {
+
+		Iterator<evento_General> itlista = listaEventos.iterator();
+		boolean control = true;
+		while (itlista.hasNext() && control) {
+
+			evento_General itl = itlista.next();
+
+			if (itl.getNomEvento().equalsIgnoreCase(nombre)) {
+				itl.setFecha(nuevo);
+				control = false;
+			}
+		}
+	}
+
+	public void actualizarEntradas(String nombre, String nuevo) {
+
+		Iterator<evento_General> itlista = listaEventos.iterator();
+		boolean control = true;
+		while (itlista.hasNext() && control) {
+
+			evento_General itl = itlista.next();
+
+			if (itl.getNomEvento().equalsIgnoreCase(nombre)) {
+				itl.setEntradas(nuevo);
+				control = false;
+			}
+		}
+	}
+
+	public void actualizarPrecio(String nombre, String nuevo) {
+
+		Iterator<evento_General> itlista = listaEventos.iterator();
+		boolean control = true;
+		while (itlista.hasNext() && control) {
+
+			evento_General itl = itlista.next();
+
+			if (itl.getNomEvento().equalsIgnoreCase(nombre)) {
+				itl.setPrecioEntrada(nuevo);
+				control = false;
+			}
+		}
+	}
+
+	public void actualizarArtista(String nombre, String nuevo) {
+
+		Iterator<evento_General> itlista = listaEventos.iterator();
+		boolean control = true;
+		evento_General itl = itlista.next();
+
+		do {
+
+			if (itl.getNomEvento().equalsIgnoreCase(nombre)) {
+				if (itl instanceof Obje_event_arte) {
+					((Obje_event_arte) itl).setNombreArtista(nuevo);
+					control = false;
+				}
+			}
+		} while (control);
+	}
+
+	public void actualizarObras(String nombre, String nuevo) {
+
+		Iterator<evento_General> itlista = listaEventos.iterator();
+		boolean control = true;
+		evento_General itl = itlista.next();
+
+		do {
+
+			if (itl.getNomEvento().equalsIgnoreCase(nombre)) {
+				if (itl instanceof Obje_event_arte) {
+					((Obje_event_arte) itl).setNumObras(nuevo);
+					control = false;
+				}
+			}
+		} while (control);
+	}
+
+	public void actualizarDirector(String nombre, String nuevo) {
+
+		Iterator<evento_General> itlista = listaEventos.iterator();
+		boolean control = true;
+		evento_General itl = itlista.next();
+
+		do {
+
+			if (itl.getNomEvento().equalsIgnoreCase(nombre)) {
+				if (itl instanceof Obje_event_cine) {
+					((Obje_event_cine) itl).setNombreArtista(nuevo);
+					control = false;
+				}
+			}
+		} while (control);
+	}
+
+	public void actualizarPelicula(String nombre, String nuevo) {
+
+		Iterator<evento_General> itlista = listaEventos.iterator();
+		boolean control = true;
+		evento_General itl = itlista.next();
+
+		do {
+
+			if (itl.getNomEvento().equalsIgnoreCase(nombre)) {
+				if (itl instanceof Obje_event_cine) {
+					((Obje_event_cine) itl).setPelicula(nuevo);
+					control = false;
+				}
+			}
+		} while (control);
+	}
+
+	public void actualizarDeporte(String nombre, String nuevo) {
+
+		Iterator<evento_General> itlista = listaEventos.iterator();
+		boolean control = true;
+		evento_General itl = itlista.next();
+
+		do {
+
+			if (itl.getNomEvento().equalsIgnoreCase(nombre)) {
+				if (itl instanceof Obje_event_deporte) {
+					((Obje_event_deporte) itl).setDeporte(nuevo);
+					control = false;
+				}
+			}
+		} while (control);
+	}
+	
+	public void actualizarPremio(String nombre, String nuevo) {
+
+		Iterator<evento_General> itlista = listaEventos.iterator();
+		boolean control = true;
+		evento_General itl = itlista.next();
+
+		do {
+
+			if (itl.getNomEvento().equalsIgnoreCase(nombre)) {
+				if (itl instanceof Obje_event_deporte) {
+					((Obje_event_deporte) itl).setPremio(nuevo);
+					control = false;
+				}
+			}
+		} while (control);
+	}
+	
+	public void actualizarTema(String nombre, String nuevo) {
+
+		Iterator<evento_General> itlista = listaEventos.iterator();
+		boolean control = true;
+		evento_General itl = itlista.next();
+
+		do {
+
+			if (itl.getNomEvento().equalsIgnoreCase(nombre)) {
+				if (itl instanceof Obje_event_empresa) {
+					((Obje_event_empresa) itl).setTema(nuevo);
+					control = false;
+				}
+			}
+		} while (control);
+	}
+	
+	public void actualizarInvitados(String nombre, String nuevo) {
+
+		Iterator<evento_General> itlista = listaEventos.iterator();
+		boolean control = true;
+		evento_General itl = itlista.next();
+
+		do {
+
+			if (itl.getNomEvento().equalsIgnoreCase(nombre)) {
+				if (itl instanceof Obje_event_empresa) {
+					((Obje_event_empresa) itl).setInvitados(nuevo);
+					control = false;
+				}
+			}
+		} while (control);
+	}
+	
+	public void actualizarDiseñador(String nombre, String nuevo) {
+
+		Iterator<evento_General> itlista = listaEventos.iterator();
+		boolean control = true;
+		evento_General itl = itlista.next();
+
+		do {
+
+			if (itl.getNomEvento().equalsIgnoreCase(nombre)) {
+				if (itl instanceof Obje_event_moda) {
+					((Obje_event_moda) itl).setDiseñador(nuevo);
+					control = false;
+				}
+			}
+		} while (control);
+	}
+	
+	public void actualizarModelos(String nombre, String nuevo) {
+
+		Iterator<evento_General> itlista = listaEventos.iterator();
+		boolean control = true;
+		evento_General itl = itlista.next();
+
+		do {
+
+			if (itl.getNomEvento().equalsIgnoreCase(nombre)) {
+				if (itl instanceof Obje_event_moda) {
+					((Obje_event_moda) itl).setNumModelos(nuevo);
+					control = false;
+				}
+			}
+		} while (control);
+	}
+	
+	public void actualizarCantante(String nombre, String nuevo) {
+
+		Iterator<evento_General> itlista = listaEventos.iterator();
+		boolean control = true;
+		evento_General itl = itlista.next();
+
+		do {
+
+			if (itl.getNomEvento().equalsIgnoreCase(nombre)) {
+				if (itl instanceof Obje_event_musical) {
+					((Obje_event_musical) itl).setNombreArtista(nuevo);
+					control = false;
+				}
+			}
+		} while (control);
+	}
+	
+	public void actualizarAlbum(String nombre, String nuevo) {
+
+		Iterator<evento_General> itlista = listaEventos.iterator();
+		boolean control = true;
+		evento_General itl = itlista.next();
+
+		do {
+
+			if (itl.getNomEvento().equalsIgnoreCase(nombre)) {
+				if (itl instanceof Obje_event_musical) {
+					((Obje_event_musical) itl).setNomAlbum(nuevo);
+					control = false;
+				}
+			}
+		} while (control);
+	}
 
 }
