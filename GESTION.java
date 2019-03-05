@@ -110,6 +110,101 @@ public class GESTION {
 		return ayuda;
 	}
 
+	public boolean comprobarCine(String nombre, boolean ayuda) {
+
+		Iterator<evento_General> itlista = listaEventos.iterator();
+		boolean control = true;
+		evento_General itl = itlista.next();
+
+		do {
+
+			if (itl.getNomEvento().equalsIgnoreCase(nombre)) {
+				if (itl instanceof Obje_event_cine) {
+					ayuda = false;
+					control = false;
+				}
+			}
+		} while (control);
+
+		return ayuda;
+	}
+
+	public boolean comprobarDeporte(String nombre, boolean ayuda) {
+
+		Iterator<evento_General> itlista = listaEventos.iterator();
+		boolean control = true;
+		evento_General itl = itlista.next();
+
+		do {
+
+			if (itl.getNomEvento().equalsIgnoreCase(nombre)) {
+				if (itl instanceof Obje_event_deporte) {
+					ayuda = false;
+					control = false;
+				}
+			}
+		} while (control);
+
+		return ayuda;
+	}
+
+	public boolean comprobarEmpresa(String nombre, boolean ayuda) {
+
+		Iterator<evento_General> itlista = listaEventos.iterator();
+		boolean control = true;
+		evento_General itl = itlista.next();
+
+		do {
+
+			if (itl.getNomEvento().equalsIgnoreCase(nombre)) {
+				if (itl instanceof Obje_event_empresa) {
+					ayuda = false;
+					control = false;
+				}
+			}
+		} while (control);
+
+		return ayuda;
+	}
+
+	public boolean comprobarModa(String nombre, boolean ayuda) {
+
+		Iterator<evento_General> itlista = listaEventos.iterator();
+		boolean control = true;
+		evento_General itl = itlista.next();
+
+		do {
+
+			if (itl.getNomEvento().equalsIgnoreCase(nombre)) {
+				if (itl instanceof Obje_event_moda) {
+					ayuda = false;
+					control = false;
+				}
+			}
+		} while (control);
+
+		return ayuda;
+	}
+
+	public boolean comprobarMusical(String nombre, boolean ayuda) {
+
+		Iterator<evento_General> itlista = listaEventos.iterator();
+		boolean control = true;
+		evento_General itl = itlista.next();
+
+		do {
+
+			if (itl.getNomEvento().equalsIgnoreCase(nombre)) {
+				if (itl instanceof Obje_event_musical) {
+					ayuda = false;
+					control = false;
+				}
+			}
+		} while (control);
+
+		return ayuda;
+	}
+
 	public void imprimirCine() {
 
 		Iterator<evento_General> itlista = listaEventos.iterator();
@@ -453,7 +548,7 @@ public class GESTION {
 			}
 		} while (control);
 	}
-	
+
 	public void actualizarPremio(String nombre, String nuevo) {
 
 		Iterator<evento_General> itlista = listaEventos.iterator();
@@ -470,7 +565,7 @@ public class GESTION {
 			}
 		} while (control);
 	}
-	
+
 	public void actualizarTema(String nombre, String nuevo) {
 
 		Iterator<evento_General> itlista = listaEventos.iterator();
@@ -487,7 +582,7 @@ public class GESTION {
 			}
 		} while (control);
 	}
-	
+
 	public void actualizarInvitados(String nombre, String nuevo) {
 
 		Iterator<evento_General> itlista = listaEventos.iterator();
@@ -504,7 +599,7 @@ public class GESTION {
 			}
 		} while (control);
 	}
-	
+
 	public void actualizarDiseñador(String nombre, String nuevo) {
 
 		Iterator<evento_General> itlista = listaEventos.iterator();
@@ -521,7 +616,7 @@ public class GESTION {
 			}
 		} while (control);
 	}
-	
+
 	public void actualizarModelos(String nombre, String nuevo) {
 
 		Iterator<evento_General> itlista = listaEventos.iterator();
@@ -538,7 +633,7 @@ public class GESTION {
 			}
 		} while (control);
 	}
-	
+
 	public void actualizarCantante(String nombre, String nuevo) {
 
 		Iterator<evento_General> itlista = listaEventos.iterator();
@@ -555,7 +650,7 @@ public class GESTION {
 			}
 		} while (control);
 	}
-	
+
 	public void actualizarAlbum(String nombre, String nuevo) {
 
 		Iterator<evento_General> itlista = listaEventos.iterator();

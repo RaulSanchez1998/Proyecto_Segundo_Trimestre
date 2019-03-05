@@ -22,26 +22,34 @@ public class TEXTO {
 
 	public void menu() { // Menu pricipal
 		do {
-			int N;
+			String N;
 			System.out.println("Bienvenido a Eventually");
 			System.out.println("Inserte '1' para acceder como desarrollador ");
 			System.out.println("Inserte '2' para acceder al menu de cliente (No incluido en esta version).");
 			System.out.println("Inserte 3 para salir del programa");
-			N = sc.nextInt();
-			sc.nextLine();
+			N = sc.nextLine();
 
 			switch (N) {
 
-			case 1:
+			case "1":
 				menuDesarrollador();
 
 				break;
 
-			case 2:
+			case "2":
+				System.out.println("Actualmente esta opcion no esta implementada");
+				System.out.println(" ");
 				// Llamar a menu de clientes(No en esta version)
 				break;
-			case 3:
+			case "3":
+				System.out.println(" Gracias por probar la version en desarrollo de nuestro programa");
+				System.out.println(" Esperamos que les haya convencido para que sigan confiando en nosotros");
 				pasar = true;
+				break;
+
+			default:
+				System.out.println("Introduce una opcion correcta");
+				System.out.println(" ");
 				break;
 
 			}
@@ -50,7 +58,7 @@ public class TEXTO {
 	}// fin metodo menu
 
 	public void menuDesarrollador() {
-		int N;
+		String N;
 		boolean salir = true;
 		do {
 
@@ -60,41 +68,47 @@ public class TEXTO {
 			System.out.println("Inserte 4 para añadir eventos al programa (Desarrollador)");
 			System.out.println("Inserte 5 para editar el contenido de los eventos");
 			System.out.println("Inserte 6 para salir al menu anterior");
-			N = sc.nextInt();
-			sc.nextLine();
+			N = sc.nextLine();
 
 			switch (N) {
 
-			case 1:// menu de mostrar los eventos(guia) No DONE
+			case "1":// menu de mostrar los eventos(guia) No DONE
 
 				menuMostrar();
 
 				break;
 
-			case 2:// Menu de comprar las entradas
+			case "2":// Menu de comprar las entradas
 
 				menuComprar();
 
 				break;
 
-			case 3:
+			case "3":
 
 				gt.imprimirFactura();
 
 				break;
 
-			case 4:// Crear objetos de cada clase DONE
+			case "4":// Crear objetos de cada clase DONE
 				menuAñadir();
 
 				break;
-			case 5:
+			case "5":
 
 				menuEditar();
 
 				break;
 
-			case 6:// salir
+			case "6":// salir
 				salir = false;
+				System.out.println("Volviendo al menu anterior");
+				System.out.println(" ");
+				break;
+
+			default:
+				System.out.println("Introduce una opcion correcta");
+				System.out.println(" ");
 				break;
 
 			}// Fine switch
@@ -102,7 +116,7 @@ public class TEXTO {
 	}// Fin menuCliente
 
 	public void menuMostrar() {
-		int N;
+		String N;
 		boolean salir = false;
 		do {
 
@@ -114,57 +128,62 @@ public class TEXTO {
 			System.out.println("Inserte '6' para ver la lista de eventos de Moda");
 			System.out.println("Inserte '7' para ver la lista de eventos de Musical");
 			System.out.println("Inserte '8' para salir");
-			N = sc.nextInt();
-			sc.nextLine();
+			N = sc.nextLine();
 
 			switch (N) {
 
-			case 1:// Mostrar todos los eventos disponibles en el momento
+			case "1":// Mostrar todos los eventos disponibles en el momento
 
 				gt.imprimirTodo();
 
 				break;
 
-			case 2:// Mostrar los eventos de Arte(Filtrar)
+			case "2":// Mostrar los eventos de Arte(Filtrar)
 
 				gt.imprimirArte();
 
 				break;
 
-			case 3:// Mostrar los eventos de Cine
+			case "3":// Mostrar los eventos de Cine
 
 				gt.imprimirCine();
 
 				break;
 
-			case 4: // Mostrar los eventos de Deporte
+			case "4": // Mostrar los eventos de Deporte
 
 				gt.imprimirdeporte();
 
 				break;
 
-			case 5: // Mostrar los eventos de Empresa
+			case "5": // Mostrar los eventos de Empresa
 
 				gt.imprimirempresa();
 
 				break;
 
-			case 6: // Mostrar los eventos de Moda
+			case "6": // Mostrar los eventos de Moda
 
 				gt.imprimirmoda();
 
 				break;
 
-			case 7: // Mostrar los eventos de Musca llamar a metodo en gestion
+			case "7": // Mostrar los eventos de Musca llamar a metodo en gestion
 
 				gt.imprimirmusica();
 
 				break;
 
-			case 8: // Salir al menu anterior
+			case "8": // Salir al menu anterior
 				// Cambiar variable boolean para salir del bucle
 				System.out.println("Volviendo al menu anterior");
+				System.out.println(" ");
 				salir = true;
+				break;
+
+			default:
+				System.out.println("Introduce una opcion correcta");
+				System.out.println(" ");
 				break;
 
 			}
@@ -173,7 +192,7 @@ public class TEXTO {
 	}// Fin metodo mostrar eventos
 
 	public void menuAñadir() {
-		int N;
+		String N;
 		boolean pasar = false;
 		do {
 
@@ -184,37 +203,43 @@ public class TEXTO {
 			System.out.println("Inserte 4 para añadir objetos de clase Empresa");
 			System.out.println("Inserte 5 para añadir objetos de clase Moda");
 			System.out.println("Inserte 6 para añadir objetos de clase Musical");
-			System.out.println("Inserte 7 para salir de este menu");
-			N = sc.nextInt();
-			sc.nextLine();
+			System.out.println("Inserte 7 para volver al menu anterior");
+			N = sc.nextLine();
 			switch (N) {
 
-			case 1:// objetos de arte
+			case "1":// objetos de arte
 				gt.añadirArte(recogerArte());
 				break;
 
-			case 2:// Objetos de Cine
+			case "2":// Objetos de Cine
 				gt.añadirCine(recogerCine());
 				break;
 
-			case 3: // Objetos de Deporte
+			case "3": // Objetos de Deporte
 				gt.añadirDeporte(recogerDeporte());
 				break;
 
-			case 4: // Objetos de Empresa
+			case "4": // Objetos de Empresa
 				gt.añadirEmpresa(recogerEmpresa());
 				break;
 
-			case 5: // Objetos de Moda
+			case "5": // Objetos de Moda
 				gt.añadirModa(recogerModa());
 				break;
 
-			case 6: // Objetos de Musical
+			case "6": // Objetos de Musical
 				gt.añadirMusical(recogerMusical());
 				break;
 
-			case 7:// salir
+			case "7":// salir
+				System.out.println("Volviendo al menu anteior");
+				System.out.println(" ");
 				pasar = true;
+				break;
+
+			default:
+				System.out.println("Introduce una opcion correcta");
+				System.out.println(" ");
 				break;
 			}
 
@@ -223,27 +248,32 @@ public class TEXTO {
 
 	public void menuComprar() {
 
-		int N;
+		String N;
 		boolean salir = false;
 		do {
 
 			System.out.println("Inserte '1' para ver la lista de eventos programados");
 			System.out.println("Inserte '2' para comprar entradas");
-			System.out.println("Inserte '3' para salir de este menu");
-			N = sc.nextInt();
-			sc.nextLine();
+			System.out.println("Inserte '3' para volver al menu anterior");
+			N = sc.nextLine();
 
 			switch (N) {
-			case 1:
+			case "1":
 				menuMostrar();
 				break;
-			case 2:
+			case "2":
 				comprarEntrada();
 				break;
 
-			case 3:
-
+			case "3":
+				System.out.println("Volviendo al menu anterior");
+				System.out.println(" ");
 				salir = true;
+				break;
+
+			default:
+				System.out.println("Introduce una opcion correcta");
+				System.out.println(" ");
 				break;
 			}
 
@@ -252,7 +282,7 @@ public class TEXTO {
 
 	public void menuEditar() {
 
-		int N;
+		String N;
 		boolean salir = true;
 		String nombre;
 		boolean comprobar = true;
@@ -267,12 +297,11 @@ public class TEXTO {
 			System.out.println("5 Moda");
 			System.out.println("6 Musical");
 			System.out.println("7 Salir");
-			N = sc.nextInt();
-			sc.nextLine();
+			N = sc.nextLine();
 
 			switch (N) {
 
-			case 1:
+			case "1":
 
 				do {
 					System.out.println("Dame el nombre del evento");
@@ -295,8 +324,126 @@ public class TEXTO {
 				ayuda = true;
 
 				break;
-			case 7:
+
+			case "2":
+				do {
+					System.out.println("Dame el nombre del evento");
+					nombre = sc.next();
+
+					comprobar = gt.buscarEvento(nombre, comprobar);
+
+					if (!comprobar) {
+						ayuda = gt.comprobarCine(nombre, ayuda);
+
+						menueditarCine(nombre);
+
+					} else if (comprobar) {
+						System.out.println("El evento no existe");
+					}
+
+				} while (comprobar && ayuda);
+
+				comprobar = true;
+				ayuda = true;
+				break;
+
+			case "3":
+				do {
+					System.out.println("Dame el nombre del evento");
+					nombre = sc.next();
+
+					comprobar = gt.buscarEvento(nombre, comprobar);
+
+					if (!comprobar) {
+						ayuda = gt.comprobarDeporte(nombre, ayuda);
+
+						menueditarDeporte(nombre);
+
+					} else if (comprobar) {
+						System.out.println("El evento no existe");
+					}
+
+				} while (comprobar && ayuda);
+
+				comprobar = true;
+				ayuda = true;
+				break;
+
+			case "4":
+				do {
+					System.out.println("Dame el nombre del evento");
+					nombre = sc.next();
+
+					comprobar = gt.buscarEvento(nombre, comprobar);
+
+					if (!comprobar) {
+						ayuda = gt.comprobarEmpresa(nombre, ayuda);
+
+						menueditarEmpresa(nombre);
+
+					} else if (comprobar) {
+						System.out.println("El evento no existe");
+					}
+
+				} while (comprobar && ayuda);
+
+				comprobar = true;
+				ayuda = true;
+				break;
+
+			case "5":
+				do {
+					System.out.println("Dame el nombre del evento");
+					nombre = sc.next();
+
+					comprobar = gt.buscarEvento(nombre, comprobar);
+
+					if (!comprobar) {
+						ayuda = gt.comprobarModa(nombre, ayuda);
+
+						menueditarModa(nombre);
+
+					} else if (comprobar) {
+						System.out.println("El evento no existe");
+					}
+
+				} while (comprobar && ayuda);
+
+				comprobar = true;
+				ayuda = true;
+				break;
+
+			case "6":
+				do {
+					System.out.println("Dame el nombre del evento");
+					nombre = sc.next();
+
+					comprobar = gt.buscarEvento(nombre, comprobar);
+
+					if (!comprobar) {
+						ayuda = gt.comprobarMusical(nombre, ayuda);
+
+						menueditarMusical(nombre);
+
+					} else if (comprobar) {
+						System.out.println("El evento no existe");
+					}
+
+				} while (comprobar && ayuda);
+
+				comprobar = true;
+				ayuda = true;
+				break;
+
+			case "7":
+				System.out.println("Volviendo al menu anterior");
+				System.out.println(" ");
 				salir = false;
+				break;
+
+			default:
+				System.out.println("Introduce una opcion correcta");
+				System.out.println(" ");
 				break;
 			}
 
@@ -538,7 +685,7 @@ public class TEXTO {
 	}
 
 	public void menueditarArte(String nombre) {
-		int N;
+		String N;
 		boolean salir = true;
 		String nuevo;
 		String funciona = nombre;
@@ -553,12 +700,11 @@ public class TEXTO {
 			System.out.println("Inserte 7 para editar artista");
 			System.out.println("Inserte 8 para editar el numero de obras a exponer");
 			System.out.println("Inserte 9 SALIR");
-			N = sc.nextInt();
-			sc.nextLine();
+			N = sc.nextLine();
 
 			switch (N) {
 
-			case 1:// editar nombre
+			case "1":// editar nombre
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarNombre(funciona, nuevo);
@@ -567,7 +713,7 @@ public class TEXTO {
 
 				break;
 
-			case 2: // editar localizacion
+			case "2": // editar localizacion
 
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
@@ -575,7 +721,7 @@ public class TEXTO {
 
 				break;
 
-			case 3: // editar duracion
+			case "3": // editar duracion
 
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
@@ -583,7 +729,7 @@ public class TEXTO {
 
 				break;
 
-			case 4: // editar fecha
+			case "4": // editar fecha
 
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
@@ -591,33 +737,39 @@ public class TEXTO {
 
 				break;
 
-			case 5: // editar entradas
+			case "5": // editar entradas
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarEntradas(funciona, nuevo);
 				break;
 
-			case 6: // editar precio
+			case "6": // editar precio
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarPrecio(funciona, nuevo);
 				break;
 
-			case 7: // editar artista
+			case "7": // editar artista
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarArtista(funciona, nuevo);
 				break;
 
-			case 8: // editar obras
+			case "8": // editar obras
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarObras(funciona, nuevo);
 				break;
 
-			case 9: // salir
-
+			case "9": // salir
+				System.out.println("Volviendo al menu anteior");
+				System.out.println(" ");
 				salir = false;
+				break;
+
+			default:
+				System.out.println("Introduce una opcion correcta");
+				System.out.println(" ");
 				break;
 
 			}
@@ -626,7 +778,7 @@ public class TEXTO {
 	}// salir de modificar arte
 
 	public void menueditarCine(String nombre) {
-		int N;
+		String N;
 		boolean salir = true;
 		String nuevo;
 		String funciona = nombre;
@@ -641,12 +793,11 @@ public class TEXTO {
 			System.out.println("Inserte 7 para editar artista");
 			System.out.println("Inserte 8 para editar la pelicula a exponer");
 			System.out.println("Inserte 9 SALIR");
-			N = sc.nextInt();
-			sc.nextLine();
+			N = sc.nextLine();
 
 			switch (N) {
 
-			case 1:// editar nombre
+			case "1":// editar nombre
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				funciona = gt.actualizarNombre(funciona, nuevo);
@@ -654,7 +805,7 @@ public class TEXTO {
 						"Al modificar el nombre, es necesario que salga al menu anterior para guardar los cambios");
 				break;
 
-			case 2: // editar localizacion
+			case "2": // editar localizacion
 				System.out.println(funciona);
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
@@ -663,7 +814,7 @@ public class TEXTO {
 
 				break;
 
-			case 3: // editar duracion
+			case "3": // editar duracion
 
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
@@ -671,7 +822,7 @@ public class TEXTO {
 
 				break;
 
-			case 4: // editar fecha
+			case "4": // editar fecha
 
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
@@ -679,39 +830,41 @@ public class TEXTO {
 
 				break;
 
-			case 5: // editar entradas
+			case "5": // editar entradas
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarEntradas(funciona, nuevo);
 
 				break;
 
-			case 6: // editar precio
+			case "6": // editar precio
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarPrecio(funciona, nuevo);
 				break;
 
-			case 7: // editar director
+			case "7": // editar director
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarDirector(nombre, nuevo);
 				break;
 
-			case 8: // editar pelicula
+			case "8": // editar pelicula
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarPelicula(nombre, nuevo);
 
 				break;
 
-			case 9: // salir
-
+			case "9": // salir
+				System.out.println("Volviendo al menu anteior");
+				System.out.println(" ");
 				salir = false;
 				break;
 
 			default:
-				System.out.println("Buena titan");
+				System.out.println("Introduce una opcion correcta");
+				System.out.println(" ");
 				break;
 
 			}
@@ -720,7 +873,7 @@ public class TEXTO {
 	}// salir de modificar cine
 
 	public void menueditarDeporte(String nombre) {
-		int N;
+		String N;
 		boolean salir = true;
 		String nuevo;
 		String funciona = nombre;
@@ -735,19 +888,18 @@ public class TEXTO {
 			System.out.println("Inserte 7 para editar el deporte");
 			System.out.println("Inserte 8 para editar el premio");
 			System.out.println("Inserte 9 SALIR");
-			N = sc.nextInt();
-			sc.nextLine();
+			N = sc.nextLine();
 
 			switch (N) {
 
-			case 1:// editar nombre
+			case "1":// editar nombre
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarNombre(funciona, nuevo);
 
 				break;
 
-			case 2: // editar localizacion
+			case "2": // editar localizacion
 
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
@@ -755,7 +907,7 @@ public class TEXTO {
 
 				break;
 
-			case 3: // editar duracion
+			case "3": // editar duracion
 
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
@@ -763,7 +915,7 @@ public class TEXTO {
 
 				break;
 
-			case 4: // editar fecha
+			case "4": // editar fecha
 
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
@@ -771,33 +923,39 @@ public class TEXTO {
 
 				break;
 
-			case 5: // editar entradas
+			case "5": // editar entradas
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarEntradas(funciona, nuevo);
 				break;
 
-			case 6: // editar precio
+			case "6": // editar precio
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarPrecio(funciona, nuevo);
 				break;
 
-			case 7: // editar deporte
+			case "7": // editar deporte
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarDeporte(funciona, nuevo);
 				break;
 
-			case 8: // editar premio
+			case "8": // editar premio
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarPremio(funciona, nuevo);
 				break;
 
-			case 9: // salir
-
+			case "9": // salir
+				System.out.println("Volviendo al menu anteior");
+				System.out.println(" ");
 				salir = false;
+				break;
+
+			default:
+				System.out.println("Introduce una opcion correcta");
+				System.out.println(" ");
 				break;
 
 			}
@@ -806,7 +964,7 @@ public class TEXTO {
 	}// salir de modificar deporte
 
 	public void menueditarEmpresa(String nombre) {
-		int N;
+		String N;
 		boolean salir = true;
 		String nuevo;
 		String funciona = nombre;
@@ -821,18 +979,17 @@ public class TEXTO {
 			System.out.println("Inserte 7 para editar el tema");
 			System.out.println("Inserte 8 para editar el numero de invitados");
 			System.out.println("Inserte 9 SALIR");
-			N = sc.nextInt();
-			sc.nextLine();
+			N = sc.nextLine();
 
 			switch (N) {
-			case 1:// editar nombre
+			case "1":// editar nombre
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarNombre(funciona, nuevo);
 
 				break;
 
-			case 2: // editar localizacion
+			case "2": // editar localizacion
 
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
@@ -840,7 +997,7 @@ public class TEXTO {
 
 				break;
 
-			case 3: // editar duracion
+			case "3": // editar duracion
 
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
@@ -848,7 +1005,7 @@ public class TEXTO {
 
 				break;
 
-			case 4: // editar fecha
+			case "4": // editar fecha
 
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
@@ -856,33 +1013,39 @@ public class TEXTO {
 
 				break;
 
-			case 5: // editar entradas
+			case "5": // editar entradas
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarEntradas(funciona, nuevo);
 				break;
 
-			case 6: // editar precio
+			case "6": // editar precio
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarPrecio(funciona, nuevo);
 				break;
 
-			case 7: // editar tema
+			case "7": // editar tema
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarTema(nombre, nuevo);
 				break;
 
-			case 8: // editar numero de invitados
+			case "8": // editar numero de invitados
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarInvitados(nombre, nuevo);
 				break;
 
-			case 9: // salir
-
+			case "9": // salir
+				System.out.println("Volviendo al menu anteior");
+				System.out.println(" ");
 				salir = false;
+				break;
+
+			default:
+				System.out.println("Introduce una opcion correcta");
+				System.out.println(" ");
 				break;
 
 			}
@@ -891,7 +1054,7 @@ public class TEXTO {
 	}// salir de modificar empresa
 
 	public void menueditarModa(String nombre) {
-		int N;
+		String N;
 		boolean salir = true;
 		String nuevo;
 		String funciona = nombre;
@@ -906,19 +1069,18 @@ public class TEXTO {
 			System.out.println("Inserte 7 para editar el diseñador");
 			System.out.println("Inserte 8 para editar el numero de modelos");
 			System.out.println("Inserte 9 SALIR");
-			N = sc.nextInt();
-			sc.nextLine();
+			N = sc.nextLine();
 
 			switch (N) {
 
-			case 1:// editar nombre
+			case "1":// editar nombre
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarNombre(funciona, nuevo);
 
 				break;
 
-			case 2: // editar localizacion
+			case "2": // editar localizacion
 
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
@@ -926,7 +1088,7 @@ public class TEXTO {
 
 				break;
 
-			case 3: // editar duracion
+			case "3": // editar duracion
 
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
@@ -934,7 +1096,7 @@ public class TEXTO {
 
 				break;
 
-			case 4: // editar fecha
+			case "4": // editar fecha
 
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
@@ -942,33 +1104,39 @@ public class TEXTO {
 
 				break;
 
-			case 5: // editar entradas
+			case "5": // editar entradas
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarEntradas(funciona, nuevo);
 				break;
 
-			case 6: // editar precio
+			case "6": // editar precio
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarPrecio(funciona, nuevo);
 				break;
 
-			case 7: // editar diseñador
+			case "7": // editar diseñador
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarDiseñador(nombre, nuevo);
 				break;
 
-			case 8: // editar numero de modeslos
+			case "8": // editar numero de modeslos
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarModelos(nombre, nuevo);
 				break;
 
-			case 9: // salir
-
+			case "9": // salir
+				System.out.println("Volviendo al menu anterior");
+				System.out.println(" ");
 				salir = false;
+				break;
+
+			default:
+				System.out.println("Introduce una opcion correcta");
+				System.out.println(" ");
 				break;
 
 			}
@@ -977,7 +1145,7 @@ public class TEXTO {
 	}// salir de modificar moda
 
 	public void menueditarMusical(String nombre) {
-		int N;
+		String N;
 		boolean salir = true;
 		String nuevo;
 		String funciona = nombre;
@@ -992,18 +1160,17 @@ public class TEXTO {
 			System.out.println("Inserte 7 para editar artista");
 			System.out.println("Inserte 8 para editar el album");
 			System.out.println("Inserte 9 SALIR");
-			N = sc.nextInt();
-			sc.nextLine();
+			N = sc.nextLine();
 
 			switch (N) {
-			case 1:// editar nombre
+			case "1":// editar nombre
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarNombre(funciona, nuevo);
 
 				break;
 
-			case 2: // editar localizacion
+			case "2": // editar localizacion
 
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
@@ -1011,7 +1178,7 @@ public class TEXTO {
 
 				break;
 
-			case 3: // editar duracion
+			case "3": // editar duracion
 
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
@@ -1019,7 +1186,7 @@ public class TEXTO {
 
 				break;
 
-			case 4: // editar fecha
+			case "4": // editar fecha
 
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
@@ -1027,33 +1194,39 @@ public class TEXTO {
 
 				break;
 
-			case 5: // editar entradas
+			case "5": // editar entradas
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarEntradas(funciona, nuevo);
 				break;
 
-			case 6: // editar precio
+			case "6": // editar precio
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarPrecio(funciona, nuevo);
 				break;
 
-			case 7: // editar cantante
+			case "7": // editar cantante
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarCantante(nombre, nuevo);
 				break;
 
-			case 8: // editar album
+			case "8": // editar album
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
 				gt.actualizarAlbum(nombre, nuevo);
 				break;
 
-			case 9: // salir
-
+			case "9": // salir
+				System.out.println("Volviendo al menu anteior");
+				System.out.println(" ");
 				salir = false;
+				break;
+
+			default:
+				System.out.println("Introduce una opcion correcta");
+				System.out.println(" ");
 				break;
 
 			}
