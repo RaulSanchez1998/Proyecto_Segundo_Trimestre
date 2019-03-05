@@ -248,12 +248,15 @@ public class TEXTO {
 
 	public void menuComprar() {
 
-		String N;
+		String N, nombre;
 		boolean salir = false;
+		boolean comprobar = true;
+		boolean ayuda = true;
 		do {
 
 			System.out.println("Inserte '1' para ver la lista de eventos programados");
 			System.out.println("Inserte '2' para comprar entradas");
+			System.out.println("Inserte '3' para eliminar un evento");
 			System.out.println("Inserte '3' para volver al menu anterior");
 			N = sc.nextLine();
 
@@ -266,6 +269,29 @@ public class TEXTO {
 				break;
 
 			case "3":
+
+				do {
+					System.out.println("Dame el nombre del evento");
+					nombre = sc.next();
+
+					comprobar = gt.buscarEvento(nombre, comprobar);
+
+					if (!comprobar) {
+
+						gt.borrarEvento(nombre);
+
+					} else if (comprobar) {
+						System.out.println("El evento no existe");
+					}
+
+				} while (comprobar && ayuda);
+
+				comprobar = true;
+				ayuda = true;
+
+				break;
+
+			case "4":
 				System.out.println("Volviendo al menu anterior");
 				System.out.println(" ");
 				salir = true;
@@ -895,8 +921,9 @@ public class TEXTO {
 			case "1":// editar nombre
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
-				gt.actualizarNombre(funciona, nuevo);
-
+				funciona = gt.actualizarNombre(funciona, nuevo);
+				System.out.println(
+						"Al modificar el nombre, es necesario que salga al menu anterior para guardar los cambios");
 				break;
 
 			case "2": // editar localizacion
@@ -985,8 +1012,9 @@ public class TEXTO {
 			case "1":// editar nombre
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
-				gt.actualizarNombre(funciona, nuevo);
-
+				funciona = gt.actualizarNombre(funciona, nuevo);
+				System.out.println(
+						"Al modificar el nombre, es necesario que salga al menu anterior para guardar los cambios");
 				break;
 
 			case "2": // editar localizacion
@@ -1076,8 +1104,9 @@ public class TEXTO {
 			case "1":// editar nombre
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
-				gt.actualizarNombre(funciona, nuevo);
-
+				funciona = gt.actualizarNombre(funciona, nuevo);
+				System.out.println(
+						"Al modificar el nombre, es necesario que salga al menu anterior para guardar los cambios");
 				break;
 
 			case "2": // editar localizacion
@@ -1166,8 +1195,9 @@ public class TEXTO {
 			case "1":// editar nombre
 				System.out.println("Introduzca el nuevo valor");
 				nuevo = sc.nextLine();
-				gt.actualizarNombre(funciona, nuevo);
-
+				funciona = gt.actualizarNombre(funciona, nuevo);
+				System.out.println(
+						"Al modificar el nombre, es necesario que salga al menu anterior para guardar los cambios");
 				break;
 
 			case "2": // editar localizacion

@@ -667,5 +667,25 @@ public class GESTION {
 			}
 		} while (control);
 	}
+	
+	public void borrarEvento(String nombre) {// borrar evento
+
+		Iterator<evento_General> itlista = listaEventos.iterator();
+		boolean control = true;
+		while (itlista.hasNext() && control) {
+
+			evento_General itl = itlista.next();
+
+			if (itl.getNomEvento().equalsIgnoreCase(nombre)) {
+				listaEventos.remove(itl);
+				control = false;
+				
+			}
+
+		}
+
+		
+	}
+	
 
 }
