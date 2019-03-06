@@ -58,8 +58,10 @@ public class TEXTO {
 	}// fin metodo menu
 
 	public void menuDesarrollador() {
-		String N;
+		String N,nombre;
 		boolean salir = true;
+		boolean comprobar = true;
+		int contador = 1;
 		do {
 
 			System.out.println("Inserte 1 para ver todos los eventos");
@@ -67,7 +69,8 @@ public class TEXTO {
 			System.out.println("Inserte 3 para ver las facturas");
 			System.out.println("Inserte 4 para añadir eventos al programa (Desarrollador)");
 			System.out.println("Inserte 5 para editar el contenido de los eventos");
-			System.out.println("Inserte 6 para salir al menu anterior");
+			System.out.println("Inserte 6 para borrar un evento");
+			System.out.println("Inserte 7 para salir al menu anterior");
 			N = sc.nextLine();
 
 			switch (N) {
@@ -100,7 +103,36 @@ public class TEXTO {
 
 				break;
 
-			case "6":// salir
+			case "6":
+				do {
+					System.out.println("Dame el nombre del evento");
+					nombre = sc.nextLine();
+
+					comprobar = gt.buscarEvento(nombre, comprobar);
+
+					if (!comprobar) {
+
+						gt.borrarEvento(nombre);
+
+					} else if (comprobar) {
+						System.out.println("El evento no existe");
+						System.out.println(" ");
+						
+						if(contador >= 3) {
+							System.out.println("Numero de intentos excedido");
+							System.out.println(" ");
+							break;
+						}
+						contador ++;
+					}
+
+				} while (comprobar);
+
+				comprobar = true; 
+
+				break;
+				
+			case "7":// salir
 				salir = false;
 				System.out.println("Volviendo al menu anterior");
 				System.out.println(" ");
@@ -248,15 +280,13 @@ public class TEXTO {
 
 	public void menuComprar() {
 
-		String N, nombre;
+		String N;
 		boolean salir = false;
-		boolean comprobar = true;
-		boolean ayuda = true;
+		
 		do {
 
 			System.out.println("Inserte '1' para ver la lista de eventos programados");
 			System.out.println("Inserte '2' para comprar entradas");
-			System.out.println("Inserte '3' para eliminar un evento");
 			System.out.println("Inserte '3' para volver al menu anterior");
 			N = sc.nextLine();
 
@@ -266,32 +296,9 @@ public class TEXTO {
 				break;
 			case "2":
 				comprarEntrada();
-				break;
+				break;			
 
 			case "3":
-
-				do {
-					System.out.println("Dame el nombre del evento");
-					nombre = sc.next();
-
-					comprobar = gt.buscarEvento(nombre, comprobar);
-
-					if (!comprobar) {
-
-						gt.borrarEvento(nombre);
-
-					} else if (comprobar) {
-						System.out.println("El evento no existe");
-					}
-
-				} while (comprobar && ayuda);
-
-				comprobar = true;
-				ayuda = true;
-
-				break;
-
-			case "4":
 				System.out.println("Volviendo al menu anterior");
 				System.out.println(" ");
 				salir = true;
@@ -491,67 +498,83 @@ public class TEXTO {
 		String numEntradas;// Maximo entradas evento
 		int numEntradasCompra;// Compra cliente
 		int precioFinal = 0;
-		int numero;
+		int numero;		
 		boolean comprobar = true;
-		String tarjeta, quedarbien;
-
+		String tarjeta = null, quedarbien;
+	
 		do {
 			System.out.println("Dame el nombre del evento");
 			nombre = sc.nextLine();
 
 			comprobar = gt.buscarEvento(nombre, comprobar);
-
+			
 		} while (comprobar);
 
 		numEntradas = gt.buscarEntradas(nombre);
 		precioEntrada = gt.buscarPrecio(nombre);
 		numero = Integer.parseInt(numEntradas);
 		// Busco el evento usando el nombre del evento
-
-		if (numero > 0) {
-			System.out.println("Introduce tu dni para realizar la compra");
-			dniComprador = sc.nextLine();
-
-			System.out.println("Introduce numero de tarjeta");
-			tarjeta = sc.nextLine();
-			System.out.println("Introduce el numero posterior");
-			quedarbien = sc.nextLine();
-
+		System.out.println(
+				"Hay " + numEntradas + " entradas disponibles con un precio de " + precioEntrada + " €");
+		
 			do {
 
 				// Muestro numero de entradas disponibles para comprar de ese evento
-				System.out.println(
-						"Hay " + numEntradas + " entradas disponibles con un precio de " + precioEntrada + " €");
+				
 
-				System.out.println("Introduce el numero de entradas que deseas comprar");// El cliente me da el umero de
-																							// entradas
-
+				System.out.println("Introduce el numero de entradas que deseas comprar");
 				numEntradasCompra = sc.nextInt();
 				sc.nextLine();
-
+				
+				
 				if (numero >= numEntradasCompra) {
 					precioFinal = Integer.parseInt(precioEntrada) * numEntradasCompra;
 
 					numero = numero - numEntradasCompra;
 
-					gt.actualizar(nombre, Integer.toString(numero));
+					
 					break;
 				} else {
 					System.out.println("No hay tantas entradas");
+					System.out.println(" ");
 				}
 
 			} while (true);
+			
+		if(numEntradasCompra != 0) {
+			
+		
+			
+			if (numero >= 0) {
+				System.out.println("Introduce tu dni para realizar la compra");
+				dniComprador = sc.nextLine();
+					
+				if(dniComprador.length()>9) {
+					System.out.println("DNI incorrecto");
+				}else {
 
+					System.out.println("Introduce numero de tarjeta");
+					tarjeta = sc.nextLine();
+					System.out.println("Introduce el numero posterior");
+					quedarbien = sc.nextLine();
+				}
+				
 			System.out.println("Compra realizada con éxito, con un importe de " + precioFinal + " €");
+			System.out.println(" ");
 
 			FACTURACION ff = new FACTURACION(dniComprador, Integer.toString(numEntradasCompra),
 					Integer.toString(precioFinal), tarjeta);
 			gt.añadirFactura(ff);
+			gt.actualizar(nombre, Integer.toString(numero));
+			
 		} else {
 			System.out.println("No quedan entradas para el evento seleccionado");
+			System.out.println(" ");
 		}
+			
+		}	
 	}
-
+	
 	// Crear cada tipo de evento (Urgente)
 	public Obje_event_arte recogerArte() {
 

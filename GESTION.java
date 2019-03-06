@@ -667,7 +667,7 @@ public class GESTION {
 			}
 		} while (control);
 	}
-	
+
 	public void borrarEvento(String nombre) {// borrar evento
 
 		Iterator<evento_General> itlista = listaEventos.iterator();
@@ -679,13 +679,9 @@ public class GESTION {
 			if (itl.getNomEvento().equalsIgnoreCase(nombre)) {
 				listaEventos.remove(itl);
 				control = false;
-				
+
 			}
-
 		}
-
-		
 	}
-	
 
 }
