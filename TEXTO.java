@@ -320,6 +320,7 @@ public class TEXTO {
 		String nombre;
 		boolean comprobar = true;
 		boolean ayuda = true;
+		int contador = 1;
 		do {
 
 			System.out.println("Que tipo de evento quiere modificar");
@@ -331,14 +332,14 @@ public class TEXTO {
 			System.out.println("6 Musical");
 			System.out.println("7 Salir");
 			N = sc.nextLine();
-
+			contador = 1;
 			switch (N) {
 
 			case "1":
 
 				do {
 					System.out.println("Dame el nombre del evento");
-					nombre = sc.next();
+					nombre = sc.nextLine();
 
 					comprobar = gt.buscarEvento(nombre, comprobar);
 
@@ -349,6 +350,14 @@ public class TEXTO {
 
 					} else if (comprobar) {
 						System.out.println("El evento no existe");
+						System.out.println("");
+
+						if(contador >=3) {
+							System.out.println("Numero de intentos excedido");
+							System.out.println(" ");
+							break;
+						}
+						contador ++;
 					}
 
 				} while (comprobar && ayuda);
@@ -361,7 +370,7 @@ public class TEXTO {
 			case "2":
 				do {
 					System.out.println("Dame el nombre del evento");
-					nombre = sc.next();
+					nombre = sc.nextLine();
 
 					comprobar = gt.buscarEvento(nombre, comprobar);
 
@@ -372,6 +381,14 @@ public class TEXTO {
 
 					} else if (comprobar) {
 						System.out.println("El evento no existe");
+						System.out.println("");
+						
+						if(contador >=3) {
+							System.out.println("Numero de intentos excedido");
+							System.out.println(" ");
+							break;
+						}
+						contador ++;
 					}
 
 				} while (comprobar && ayuda);
@@ -383,7 +400,7 @@ public class TEXTO {
 			case "3":
 				do {
 					System.out.println("Dame el nombre del evento");
-					nombre = sc.next();
+					nombre = sc.nextLine();
 
 					comprobar = gt.buscarEvento(nombre, comprobar);
 
@@ -394,6 +411,14 @@ public class TEXTO {
 
 					} else if (comprobar) {
 						System.out.println("El evento no existe");
+						System.out.println("");
+						
+						if(contador >=3) {
+							System.out.println("Numero de intentos excedido");
+							System.out.println(" ");
+							break;
+						}
+						contador ++;
 					}
 
 				} while (comprobar && ayuda);
@@ -405,7 +430,7 @@ public class TEXTO {
 			case "4":
 				do {
 					System.out.println("Dame el nombre del evento");
-					nombre = sc.next();
+					nombre = sc.nextLine();
 
 					comprobar = gt.buscarEvento(nombre, comprobar);
 
@@ -416,6 +441,14 @@ public class TEXTO {
 
 					} else if (comprobar) {
 						System.out.println("El evento no existe");
+						System.out.println("");
+						
+						if(contador >=3) {
+							System.out.println("Numero de intentos excedido");
+							System.out.println(" ");
+							break;
+						}
+						contador ++;
 					}
 
 				} while (comprobar && ayuda);
@@ -427,7 +460,7 @@ public class TEXTO {
 			case "5":
 				do {
 					System.out.println("Dame el nombre del evento");
-					nombre = sc.next();
+					nombre = sc.nextLine();
 
 					comprobar = gt.buscarEvento(nombre, comprobar);
 
@@ -438,6 +471,14 @@ public class TEXTO {
 
 					} else if (comprobar) {
 						System.out.println("El evento no existe");
+						System.out.println("");
+						
+						if(contador >=3) {
+							System.out.println("Numero de intentos excedido");
+							System.out.println(" ");
+							break;
+						}
+						contador ++;
 					}
 
 				} while (comprobar && ayuda);
@@ -449,7 +490,7 @@ public class TEXTO {
 			case "6":
 				do {
 					System.out.println("Dame el nombre del evento");
-					nombre = sc.next();
+					nombre = sc.nextLine();
 
 					comprobar = gt.buscarEvento(nombre, comprobar);
 
@@ -460,6 +501,14 @@ public class TEXTO {
 
 					} else if (comprobar) {
 						System.out.println("El evento no existe");
+						System.out.println("");
+						
+						if(contador >=3) {
+							System.out.println("Numero de intentos excedido");
+							System.out.println(" ");
+							break;
+						}
+						contador ++;
 					}
 
 				} while (comprobar && ayuda);

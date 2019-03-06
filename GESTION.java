@@ -59,37 +59,7 @@ public class GESTION {
 		listaFactura.add(ff);
 	}
 
-	// Metodo de imprimir
 
-	public void imprimirTodo() {
-
-		Iterator<evento_General> itlista = listaEventos.iterator();
-		boolean control = true;
-		while (itlista.hasNext() && control) {
-
-			evento_General itl = itlista.next();
-
-			System.out.println(itl);
-			System.out.println("\n");
-
-		}
-
-	}
-
-	public void imprimirArte() {
-
-		Iterator<evento_General> itlista = listaEventos.iterator();
-		boolean control = true;
-		while (itlista.hasNext() && control) {
-
-			evento_General itl = itlista.next();
-
-			if (itl instanceof Obje_event_arte) {
-				System.out.println(itl);
-				System.out.println("\n");
-			}
-		}
-	}
 
 	public boolean comprobarArte(String nombre, boolean ayuda) {
 
@@ -203,6 +173,38 @@ public class GESTION {
 		} while (control);
 
 		return ayuda;
+	}
+	
+	// Metodo de imprimir
+
+	public void imprimirTodo() {
+
+		Iterator<evento_General> itlista = listaEventos.iterator();
+		boolean control = true;
+		while (itlista.hasNext() && control) {
+
+			evento_General itl = itlista.next();
+
+			System.out.println(itl);
+			System.out.println("\n");
+
+		}
+
+	}
+
+	public void imprimirArte() {
+
+		Iterator<evento_General> itlista = listaEventos.iterator();
+		boolean control = true;
+		while (itlista.hasNext() && control) {
+
+			evento_General itl = itlista.next();
+
+			if (itl instanceof Obje_event_arte) {
+				System.out.println(itl);
+				System.out.println("\n");
+			}
+		}
 	}
 
 	public void imprimirCine() {
