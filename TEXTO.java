@@ -603,15 +603,16 @@ public class TEXTO {
 					tarjeta = sc.nextLine();
 					System.out.println("Introduce el numero posterior");
 					quedarbien = sc.nextLine();
-				}
-				
-			System.out.println("Compra realizada con éxito, con un importe de " + precioFinal + " €");
-			System.out.println(" ");
+					
+					System.out.println("Compra realizada con éxito, con un importe de " + precioFinal + " €");
+					System.out.println(" ");
 
-			FACTURACION ff = new FACTURACION(dniComprador, Integer.toString(numEntradasCompra),
-					Integer.toString(precioFinal), tarjeta);
-			gt.añadirFactura(ff);
-			gt.actualizar(nombre, Integer.toString(numero));
+					FACTURACION ff = new FACTURACION(dniComprador, Integer.toString(numEntradasCompra),
+							Integer.toString(precioFinal), tarjeta);
+					gt.añadirFactura(ff);
+					gt.actualizar(nombre, Integer.toString(numero));
+				}
+			
 			
 		} else {
 			System.out.println("No quedan entradas para el evento seleccionado");
