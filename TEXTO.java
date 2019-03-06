@@ -590,10 +590,7 @@ public class TEXTO {
 
 			} while (true);
 			
-		if(numEntradasCompra != 0) {
-			
-		
-			
+		if(numEntradasCompra != 0) {			
 			if (numero >= 0) {
 				System.out.println("Introduce tu dni para realizar la compra");
 				dniComprador = sc.nextLine();
@@ -631,9 +628,9 @@ public class TEXTO {
 
 		System.out.println("Dame nombre");
 		Nombre = sc.nextLine();
-		System.out.println("Dame Locali");
+		System.out.println("Dame Localizacion");
 		Localizacion = sc.nextLine();
-		System.out.println("Dame dura");
+		System.out.println("Dame duracion");
 		Duracion = sc.nextLine();
 		System.out.println("fecha");
 		Fecha = sc.nextLine();
@@ -658,9 +655,9 @@ public class TEXTO {
 
 		System.out.println("Dame nombre");
 		Nombre = sc.nextLine();
-		System.out.println("Dame Locali");
+		System.out.println("Dame Localizacion");
 		Localizacion = sc.nextLine();
-		System.out.println("Dame dura");
+		System.out.println("Dame duracion");
 		Duracion = sc.nextLine();
 		System.out.println("fecha");
 		Fecha = sc.nextLine();
@@ -684,9 +681,9 @@ public class TEXTO {
 
 		System.out.println("Dame nombre");
 		Nombre = sc.nextLine();
-		System.out.println("Dame Locali");
+		System.out.println("Dame Localizacion");
 		Localizacion = sc.nextLine();
-		System.out.println("Dame dura");
+		System.out.println("Dame duracion");
 		Duracion = sc.nextLine();
 		System.out.println("fecha");
 		Fecha = sc.nextLine();
@@ -710,9 +707,9 @@ public class TEXTO {
 
 		System.out.println("Dame nombre");
 		Nombre = sc.nextLine();
-		System.out.println("Dame Locali");
+		System.out.println("Dame Localizacion");
 		Localizacion = sc.nextLine();
-		System.out.println("Dame dura");
+		System.out.println("Dame duracion");
 		Duracion = sc.nextLine();
 		System.out.println("fecha");
 		Fecha = sc.nextLine();
@@ -736,9 +733,9 @@ public class TEXTO {
 
 		System.out.println("Dame nombre");
 		Nombre = sc.nextLine();
-		System.out.println("Dame Locali");
+		System.out.println("Dame Localizacion");
 		Localizacion = sc.nextLine();
-		System.out.println("Dame dura");
+		System.out.println("Dame duracion");
 		Duracion = sc.nextLine();
 		System.out.println("fecha");
 		Fecha = sc.nextLine();
@@ -762,9 +759,9 @@ public class TEXTO {
 
 		System.out.println("Dame nombre");
 		Nombre = sc.nextLine();
-		System.out.println("Dame Locali");
+		System.out.println("Dame Localizacion");
 		Localizacion = sc.nextLine();
-		System.out.println("Dame dura");
+		System.out.println("Dame duracion");
 		Duracion = sc.nextLine();
 		System.out.println("fecha");
 		Fecha = sc.nextLine();
