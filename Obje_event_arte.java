@@ -4,7 +4,7 @@ package Proyecto_Segundo_Trimestre;
 public class Obje_event_arte extends evento_General {
 
 	
-	protected String nombreArtista,numObras;
+	private String nombreArtista,numObras;
 
 	public Obje_event_arte() {
 		super();

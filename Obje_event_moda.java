@@ -3,7 +3,7 @@ package Proyecto_Segundo_Trimestre;
 
 public class Obje_event_moda  extends evento_General{
 
-	String Diseñador,numModelos;
+	private String Diseñador,numModelos;
 
 	public Obje_event_moda() {
 		super();

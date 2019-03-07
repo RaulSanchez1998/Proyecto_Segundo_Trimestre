@@ -2,7 +2,7 @@ package Proyecto_Segundo_Trimestre;
 
 public class FACTURACION {
 
-	String DNIcomprador, numEntradasCompradas, precioPagado,tarjeta;
+	private String DNIcomprador, numEntradasCompradas, precioPagado,tarjeta;
 
 	/**
 	 * 

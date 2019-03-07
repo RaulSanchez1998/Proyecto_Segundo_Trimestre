@@ -3,7 +3,7 @@ package Proyecto_Segundo_Trimestre;
 
 public class Obje_event_cine  extends evento_General {
 
-	String nombreArtistaP,Pelicula;
+	private String nombreArtistaP,Pelicula;
 
 	public Obje_event_cine() {
 		super();

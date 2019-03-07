@@ -4,7 +4,7 @@ package Proyecto_Segundo_Trimestre;
 public class Obje_event_empresa  extends evento_General{
 
 	
-	String Tema,numInvitados;
+	private String Tema,numInvitados;
 
 	protected Obje_event_empresa() {
 		super();

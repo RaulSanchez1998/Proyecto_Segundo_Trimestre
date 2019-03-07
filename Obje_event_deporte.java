@@ -3,7 +3,7 @@ package Proyecto_Segundo_Trimestre;
 
 public class Obje_event_deporte  extends evento_General{
 
-	String Deporte,Premio;
+	private String Deporte,Premio;
 
 	
 	protected Obje_event_deporte() {

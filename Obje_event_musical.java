@@ -4,7 +4,7 @@ package Proyecto_Segundo_Trimestre;
 
 public class Obje_event_musical  extends evento_General {
 
-	String nombreArtistaM,nomAlbum; //añadir variable tema para poder organizar por tipo
+	private String nombreArtistaM,nomAlbum;
 
 	protected Obje_event_musical() {
 		super();
