@@ -550,23 +550,26 @@ public class TEXTO {
 		int numero;		
 		boolean comprobar = true;
 		String tarjeta = null, quedarbien;
+		int contador = 1;
 	
 		do {
 			System.out.println("Dame el nombre del evento");
 			nombre = sc.nextLine();
 
 			comprobar = gt.buscarEvento(nombre, comprobar);
+			if (!comprobar) {
+				
 			
-		} while (comprobar);
-
+			
 		numEntradas = gt.buscarEntradas(nombre);
 		precioEntrada = gt.buscarPrecio(nombre);
 		numero = Integer.parseInt(numEntradas);
 		// Busco el evento usando el nombre del evento
-		System.out.println(
-				"Hay " + numEntradas + " entradas disponibles con un precio de " + precioEntrada + " €");
+		
 		
 			do {
+				System.out.println(
+						"Hay " + numEntradas + " entradas disponibles con un precio de " + precioEntrada + " €");
 
 				// Muestro numero de entradas disponibles para comprar de ese evento
 				
@@ -620,6 +623,20 @@ public class TEXTO {
 		}
 			
 		}	
+		
+			}else if(comprobar){
+				System.out.println("El evento no existe");
+				System.out.println("");
+				if (contador >= 3) {
+					System.out.println("Numero de intentos superado");
+					System.out.println("");
+					break;
+				}
+				contador ++;
+			}
+			
+		} while (comprobar);
+			comprobar = true;
 	}
 	
 	// Crear cada tipo de evento (Urgente)
