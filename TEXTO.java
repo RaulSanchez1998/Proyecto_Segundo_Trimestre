@@ -639,10 +639,11 @@ public class TEXTO {
 		numEntradas = sc.nextLine();
 		System.out.println("Dame precio");
 		precioEntradas = sc.nextLine();
-		System.out.println("artista");
+		System.out.println("Artista");
 		nombreArtista = sc.nextLine();
-		System.out.println("numero obras");
+		System.out.println("Numero obras");
 		numObras = sc.nextLine();
+		
 
 		Obje_event_arte ea = new Obje_event_arte(Nombre, Localizacion, Duracion, Fecha, numEntradas, precioEntradas,
 				nombreArtista, numObras);
@@ -666,9 +667,9 @@ public class TEXTO {
 		numEntradas = sc.nextLine();
 		System.out.println("Dame precio");
 		precioEntradas = sc.nextLine();
-		System.out.println("artista");
+		System.out.println("Artista");
 		nombreArtistaP = sc.nextLine();
-		System.out.println("numero obras");
+		System.out.println("Peliculas");
 		Pelicula = sc.nextLine();
 
 		Obje_event_cine ec = new Obje_event_cine(Nombre, Localizacion, Duracion, Fecha, numEntradas, precioEntradas,
@@ -692,9 +693,9 @@ public class TEXTO {
 		numEntradas = sc.nextLine();
 		System.out.println("Dame precio");
 		precioEntradas = sc.nextLine();
-		System.out.println("artista");
+		System.out.println("Deporte");
 		deporte = sc.nextLine();
-		System.out.println("numero obras");
+		System.out.println("Premio");
 		premio = sc.nextLine();
 
 		Obje_event_deporte ed = new Obje_event_deporte(Nombre, Localizacion, Duracion, Fecha, numEntradas,
@@ -718,9 +719,9 @@ public class TEXTO {
 		numEntradas = sc.nextLine();
 		System.out.println("Dame precio");
 		precioEntradas = sc.nextLine();
-		System.out.println("artista");
+		System.out.println("Tema");
 		Tema = sc.nextLine();
-		System.out.println("numero obras");
+		System.out.println("Numero Invitados");
 		numInvitados = sc.nextLine();
 
 		Obje_event_empresa ee = new Obje_event_empresa(Nombre, Localizacion, Duracion, Fecha, numEntradas,
@@ -744,9 +745,9 @@ public class TEXTO {
 		numEntradas = sc.nextLine();
 		System.out.println("Dame precio");
 		precioEntradas = sc.nextLine();
-		System.out.println("artista");
+		System.out.println("Diseñador");
 		Diseñador = sc.nextLine();
-		System.out.println("numero obras");
+		System.out.println("Modelos");
 		numModelos = sc.nextLine();
 
 		Obje_event_moda em = new Obje_event_moda(Nombre, Localizacion, Duracion, Fecha, numEntradas, precioEntradas,
@@ -770,9 +771,9 @@ public class TEXTO {
 		numEntradas = sc.nextLine();
 		System.out.println("Dame precio");
 		precioEntradas = sc.nextLine();
-		System.out.println("artista");
+		System.out.println("Cantante");
 		nombreArtistaM = sc.nextLine();
-		System.out.println("numero obras");
+		System.out.println("Album");
 		nomAlbum = sc.nextLine();
 
 		Obje_event_musical eu = new Obje_event_musical(Nombre, Localizacion, Duracion, Fecha, numEntradas,
