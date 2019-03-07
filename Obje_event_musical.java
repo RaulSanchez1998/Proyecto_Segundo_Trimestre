@@ -22,10 +22,7 @@ public class Obje_event_musical  extends evento_General {
 	 */
 	
 
-	protected String getNombreArtistaM() {
-		return nombreArtistaM;
-	}
-
+	
 	/**
 	 * @param nomEvento
 	 * @param localizacion
@@ -42,6 +39,11 @@ public class Obje_event_musical  extends evento_General {
 		this.nombreArtistaM = nombreArtistaM;
 		this.nomAlbum = nomAlbum;
 	}
+	
+	protected String getNombreArtistaM() {
+		return nombreArtistaM;
+	}
+
 
 	protected void setNombreArtista(String nombreArtistaM) {
 		this.nombreArtistaM = nombreArtistaM;
