@@ -789,11 +789,11 @@ public class TEXTO {
 		do {
 			System.out.println("Que quieres editar");
 			System.out.println("Inserte 1 para editar el nombre [Necesita reinicio]");
-			System.out.println("Inserte 2 para editar el locaclizacion");
-			System.out.println("Inserte 3 para editar el duracion");
-			System.out.println("Inserte 4 para editar el fecha");
-			System.out.println("Inserte 5 para editar el entradas");
-			System.out.println("Inserte 6 para editar el precio entradas");
+			System.out.println("Inserte 2 para editar la localizacion");
+			System.out.println("Inserte 3 para editar la duracion");
+			System.out.println("Inserte 4 para editar la fecha");
+			System.out.println("Inserte 5 para editar las entradas");
+			System.out.println("Inserte 6 para editar el precio de las entradas");
 			System.out.println("Inserte 7 para editar artista");
 			System.out.println("Inserte 8 para editar el numero de obras a exponer");
 			System.out.println("Inserte 9 SALIR");
@@ -882,12 +882,12 @@ public class TEXTO {
 		do {
 			System.out.println("Que quieres editar");
 			System.out.println("Inserte 1 para editar el nombre [Necesita reinicio]");
-			System.out.println("Inserte 2 para editar el locaclizacion");
-			System.out.println("Inserte 3 para editar el duracion");
-			System.out.println("Inserte 4 para editar el fecha");
-			System.out.println("Inserte 5 para editar el entradas");
-			System.out.println("Inserte 6 para editar el precio entradas");
-			System.out.println("Inserte 7 para editar artista");
+			System.out.println("Inserte 2 para editar la localizacion");
+			System.out.println("Inserte 3 para editar la duracion");
+			System.out.println("Inserte 4 para editar la fecha");
+			System.out.println("Inserte 5 para editar las entradas");
+			System.out.println("Inserte 6 para editar el precio de las entradas");
+			System.out.println("Inserte 7 para editar el artista");
 			System.out.println("Inserte 8 para editar la pelicula a exponer");
 			System.out.println("Inserte 9 SALIR");
 			N = sc.nextLine();
@@ -977,7 +977,7 @@ public class TEXTO {
 		do {
 			System.out.println("Que quieres editar");
 			System.out.println("Inserte 1 para editar el nombre");
-			System.out.println("Inserte 2 para editar la locaclizacion");
+			System.out.println("Inserte 2 para editar la localizacion");
 			System.out.println("Inserte 3 para editar la duracion");
 			System.out.println("Inserte 4 para editar la fecha");
 			System.out.println("Inserte 5 para editar las entradas");
@@ -1069,7 +1069,7 @@ public class TEXTO {
 		do {
 			System.out.println("Que quieres editar");
 			System.out.println("Inserte 1 para editar el nombre");
-			System.out.println("Inserte 2 para editar la locaclizacion");
+			System.out.println("Inserte 2 para editar la localizacion");
 			System.out.println("Inserte 3 para editar la duracion");
 			System.out.println("Inserte 4 para editar la fecha");
 			System.out.println("Inserte 5 para editar las entradas");
@@ -1160,7 +1160,7 @@ public class TEXTO {
 		do {
 			System.out.println("Que quieres editar");
 			System.out.println("Inserte 1 para editar el nombre");
-			System.out.println("Inserte 2 para editar la locaclizacion");
+			System.out.println("Inserte 2 para editar la localizacion");
 			System.out.println("Inserte 3 para editar la duracion");
 			System.out.println("Inserte 4 para editar la fecha");
 			System.out.println("Inserte 5 para editar las entradas");
@@ -1252,7 +1252,7 @@ public class TEXTO {
 		do {
 			System.out.println("Que quieres editar");
 			System.out.println("Inserte 1 para editar el nombre");
-			System.out.println("Inserte 2 para editar la locaclizacion");
+			System.out.println("Inserte 2 para editar la localizacion");
 			System.out.println("Inserte 3 para editar la duracion");
 			System.out.println("Inserte 4 para editar la fecha");
 			System.out.println("Inserte 5 para editar las entradas");
