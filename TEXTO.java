@@ -643,6 +643,7 @@ public class TEXTO {
 		nombreArtista = sc.nextLine();
 		System.out.println("Numero obras");
 		numObras = sc.nextLine();
+		
 
 		Obje_event_arte ea = new Obje_event_arte(Nombre, Localizacion, Duracion, Fecha, numEntradas, precioEntradas,
 				nombreArtista, numObras);
